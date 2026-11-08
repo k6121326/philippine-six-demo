@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131b">
+  <title>Philippine Six · 演示系统</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home"><span class="crown">♛</span> PHILIPPINE <b>SIX</b></a>
+    <span class="demo-tag">演示环境 · 虚拟数据</span>
+  </header>
+  <nav class="nav">
+    <button data-view="home" class="active">中文首页</button>
+    <button data-view="english">English Results</button>
+    <button data-view="admin">管理员后台</button>
+  </nav>
+  <main>
+    <section id="home" class="view active">
+      <div class="hero">
+        <p class="eyebrow">PHILIPPINE SIX · DEMO</p>
+        <h1>菲律宾六球</h1>
+        <p class="muted">统一模拟开奖记录 · 所有结果均为演示数据</p>
+        <div class="draw-card">
+          <div class="draw-meta"><span>演示期数 <b id="drawIssue">DEMO-0001</b></span><span class="status">演示结果</span></div>
+          <div id="balls" class="balls"></div>
+          <p class="hint">示例号码仅用于页面展示，不代表真实开奖或投注结果。</p>
+        </div>
+      </div>
+      <div class="grid two">
+        <article class="panel">
+          <h2>历史期数</h2>
+          <div id="historyCn" class="history"></div>
+        </article>
+        <article class="panel">
+          <h2>演示账户</h2>
+          <p class="muted">此处不收取资金，也不提供真实充值或提现。</p>
+          <div class="demo-balance">虚拟余额 <strong>1,000.00</strong></div>
+          <div class="actions"><button class="gold" id="demoLogin">体验演示登录</button><button class="ghost" id="showNotice">功能说明</button></div>
+          <p id="loginNotice" class="notice" aria-live="polite"></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="english" class="view">
+      <div class="english-head">
+        <p class="eyebrow">PUBLIC RESULTS · DEMO</p>
+        <h1>Six Lotto</h1>
+        <p class="muted">Simple results and draw history</p>
+      </div>
+      <article class="panel result-panel">
+        <div class="draw-meta"><span>Draw ID <b id="drawIssueEn">DEMO-0001</b></span><span class="status">Demo result</span></div>
+        <div id="ballsEn" class="balls"></div>
+        <p class="hint">Demonstration data only. No wagering or real-money transactions.</p>
+      </article>
+      <article class="panel">
+        <h2>Draw History</h2>
+        <div id="historyEn" class="history"></div>
+      </article>
+    </section>
+
+    <section id="admin" class="view">
+      <div class="admin-title">
+        <div><p class="eyebrow">ADMIN WORKSPACE</p><h1>客服管理中心</h1><p class="muted">客户与平台客服之间的演示聊天工作台</p></div>
+        <span class="status">演示模式</span>
+      </div>
+      <div class="admin-layout">
+        <aside class="panel customer-list">
+          <h2>客户会话</h2>
+          <input id="customerSearch" placeholder="搜索客户" aria-label="搜索客户">
+          <div id="customers"></div>
+        </aside>
+        <section class="panel chat-panel">
+          <div class="chat-head"><div><b id="chatName">Lucky888</b><small id="chatStatus">演示客户 · 在线</small></div><span class="status">客服会话</span></div>
+          <div id="messages" class="messages" aria-live="polite"></div>
+          <form id="chatForm" class="composer">
+            <input id="messageInput" maxlength="300" placeholder="输入客服回复（仅保存在本设备）" autocomplete="off">
+            <button class="gold" type="submit">发送</button>
+          </form>
+          <p class="hint">提示：此静态版本的聊天仅保存在当前浏览器，不会发送给真实客户。</p>
+        </section>
+        <aside class="panel profile">
+          <h2>客户资料</h2>
+          <div class="avatar">L</div><h3 id="profileName">Lucky888</h3>
+          <p class="muted">演示客户编号：DEMO-1001</p>
+          <dl><dt>注册时间</dt><dd>演示数据</dd><dt>账户状态</dt><dd>测试账户</dd><dt>资金记录</dt><dd>无真实资金记录</dd></dl>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer>PHILIPPINE SIX DEMO · 仅供界面与流程测试 · 不涉及真实资金或真实赌博</footer>
+  <script src="app.js"></script>
+</body>
+</html>
